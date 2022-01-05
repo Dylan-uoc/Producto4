@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.producto4.ui;
+package com.producto4.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author rojaw
  */
-public class FXMLController implements Initializable {
+public class ViewLoginController implements Initializable {
 
     /**
      * Initializes the controller class.
