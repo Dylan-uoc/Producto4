@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-dic-2021 21:27:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.producto4.model.entidades.Sede" table="sede" catalog="pa4" optimistic-lock="version">
+        <id name="id" type="short">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="ubicacion" type="string">
+            <column name="Ubicacion" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="Tipo" not-null="true" />
+        </property>
+        <set name="usuariosProyectoses" table="usuarios_proyectos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdProyecto" not-null="true" />
+            </key>
+            <one-to-many class="com.producto4.model.entidades.UsuariosProyectos" />
+        </set>
+    </class>
+</hibernate-mapping>
