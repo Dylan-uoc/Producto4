@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-dic-2021 21:27:55 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.producto4.model.entidades.Usuario" table="usuario" catalog="pa4" optimistic-lock="version">
+        <id name="id" type="short">
+            <column name="Id" />
+            <generator class="assigned" />
+        </id>
+        <property name="administrador" type="short">
+            <column name="Administrador" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" not-null="true" />
+        </property>
+        <property name="dni" type="string">
+            <column name="DNI" length="30" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="Nombre" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="Apellido" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="Correo" not-null="true" />
+        </property>
+        <property name="fechaNacimiento" type="date">
+            <column name="FechaNacimiento" length="10" not-null="true" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="Usuario" not-null="true" />
+        </property>
+        <property name="puesto" type="string">
+            <column name="Puesto" not-null="true" />
+        </property>
+        <property name="idSede" type="short">
+            <column name="IdSede" not-null="true" />
+        </property>
+        <property name="tipoEmpleado" type="string">
+            <column name="TipoEmpleado" not-null="true" />
+        </property>
+        <property name="salario" type="java.lang.Float">
+            <column name="Salario" precision="12" scale="0" />
+        </property>
+        <property name="territorio" type="string">
+            <column name="Territorio" />
+        </property>
+        <set name="usuariosSedeses" table="usuarios_sedes" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdUsuario" not-null="true" />
+            </key>
+            <one-to-many class="com.producto4.model.entidades.UsuariosSedes" />
+        </set>
+        <set name="usuariosProyectoses" table="usuarios_proyectos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdUsuario" not-null="true" />
+            </key>
+            <one-to-many class="com.producto4.model.entidades.UsuariosProyectos" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -20,9 +20,7 @@ import javafx.scene.input.*;
  */
 public class ViewLoginController implements Initializable  {
 
-    public ViewLoginController(){
-
-    }
+    public ViewLoginController(){  }
 
     @FXML
     private TextField username_login;
@@ -31,22 +29,16 @@ public class ViewLoginController implements Initializable  {
     private PasswordField password_login;
     
     @FXML
-    private Button button_login;
+    private Button button_Login;
     
     @FXML
     private Label wrong_login;
     
     @FXML
-    private void eventKey(KeyEvent event){
-    
-    
-    }
-    
-    @FXML
-    private void eventAction(ActionEvent event){
-
-
-    }
+    private void IniciarLogin (ActionEvent event){
+    	System.out.println("Se esta llamando");
+    	
+    } 
     
         
     /**
